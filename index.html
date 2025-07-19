@@ -40,6 +40,14 @@
     .project-card h3 { margin-bottom:0.5rem; }
     .project-card p { margin-bottom:1rem; }
     .btn { display:inline-block; padding:0.5rem 1rem; background:var(--primary); color:var(--text-light); text-decoration:none; border-radius:4px; }
+    .skills { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; }
+    .skill-tag {
+      background: var(--primary);
+      color: white;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
     footer { text-align:center; padding:2rem; font-size:0.9rem; color:#666; }
     a { color: var(--primary); }
   </style>
@@ -50,6 +58,7 @@
   <h1>Sourabh Baldwa</h1>
   <nav>
     <a href="#about">About</a>
+    <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -58,7 +67,17 @@
 <main>
   <section id="about" class="bg-white">
     <h2>About Me</h2>
-    <p>I'm a Machine Learning Engineer specializing in NLP and GenAI, with 5+ years experience building scalable retrieval, ranking, and RAG systems for enterprise applications.</p>
+    <p>An Experienced Data Scientist familiar with gathering, cleaning and organising large datasets for use by technical and non-technical personnel. Highly organised, motivated and diligent with significant background in Natural Language Processing (NLP), LLM, Data Mining, Big Data Analytics, Predictive Modelling and other ML projects.</p>
+  </section>
+
+  <section id="skills" class="bg-white">
+    <h2>Skills</h2>
+    <div class="skills">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">Big Data</span>
+      <span class="skill-tag">Generative AI</span>
+      <span class="skill-tag">AI Agents</span>
+    </div>
   </section>
 
   <section id="projects" class="bg-white">
