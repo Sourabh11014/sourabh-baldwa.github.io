@@ -377,28 +377,6 @@
       font-weight: 700;
     }
 
-    .project-points {
-      list-style: none;
-      display: grid;
-      gap: 0.6rem;
-      margin: 0 0 1.1rem;
-    }
-
-    .project-points li {
-      color: #475569;
-      position: relative;
-      padding-left: 1.1rem;
-    }
-
-    .project-points li::before {
-      content: "•";
-      color: var(--primary);
-      position: absolute;
-      left: 0;
-      top: 0;
-      font-weight: 700;
-    }
-
     .contact-grid {
       grid-template-columns: 1.1fr 0.9fr;
     }
@@ -415,44 +393,10 @@
       font-weight: 600;
     }
 
-    .footer-inner {
-      width: min(calc(100% - 2rem), var(--max-width));
-      margin: 0 auto;
-      padding: 1.6rem 0 0;
-      border-top: 1px solid rgba(148, 163, 184, 0.2);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-copy strong {
-      color: #cbd5e1;
-      display: block;
-      margin-bottom: 0.2rem;
-    }
-
-    .footer-copy span,
-    .footer-links a {
-      color: #94a3b8;
-      font-size: 0.95rem;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a:hover {
-      color: #e2e8f0;
-    }
-
     footer {
+      text-align: center;
       color: #64748b;
       padding: 2rem 1rem 3rem;
-      background: transparent;
     }
 
     @media (max-width: 920px) {
@@ -466,11 +410,6 @@
 
       .section-header {
         align-items: start;
-        flex-direction: column;
-      }
-
-      .footer-inner {
-        align-items: flex-start;
         flex-direction: column;
       }
     }
@@ -657,38 +596,28 @@
           <article class="project-card">
             <h3>Click Prediction Model</h3>
             <p>
-              Built a conversion-focused ranking system to prioritize offers by click probability using a blended
-              ensemble strategy across classical ML and deep learning.
+              Developed a high-performance ranking approach to prioritize offers by click probability, combining tree
+              ensembles and deep learning over a large, feature-rich dataset.
             </p>
             <div class="project-meta">
               <span class="chip">1M+ rows</span>
               <span class="chip">367 features</span>
               <span class="chip">Ranking & Prediction</span>
             </div>
-            <ul class="project-points">
-              <li>Worked across feature engineering, data preparation, and model experimentation on a large-scale dataset.</li>
-              <li>Combined tree-based methods with deep learning to capture both structured signals and complex interactions.</li>
-              <li>Designed the workflow to support business-facing prioritization decisions rather than just offline model accuracy.</li>
-            </ul>
             <a class="project-link" href="#contact">Ask me about this project →</a>
           </article>
 
           <article class="project-card">
             <h3>Enterprise RAG System</h3>
             <p>
-              Architected a retrieval-augmented generation pipeline for enterprise use cases where answer quality,
-              speed, and trustworthiness all needed to work together.
+              Designed a low-latency retrieval-augmented generation pipeline using hybrid retrieval, multi-stage ranking,
+              and hallucination mitigation techniques for enterprise-scale GenAI applications.
             </p>
             <div class="project-meta">
               <span class="chip">Hybrid Retrieval</span>
               <span class="chip">Multi-Stage Ranking</span>
               <span class="chip">Low Latency</span>
             </div>
-            <ul class="project-points">
-              <li>Improved relevance with hybrid retrieval and multi-stage ranking to surface better context before generation.</li>
-              <li>Focused on low-latency behavior so the system remained practical for real user-facing GenAI workflows.</li>
-              <li>Included hallucination-mitigation thinking to make outputs more grounded and reliable in enterprise settings.</li>
-            </ul>
             <a class="project-link" href="#contact">Discuss the architecture →</a>
           </article>
         </div>
@@ -715,11 +644,10 @@
             </ul>
           </article>
           <article class="contact-card">
-            <h3>How I can contribute</h3>
+            <h3>What this site now emphasizes</h3>
             <p>
-              I am especially excited by opportunities where data science needs to translate into measurable product or
-              business impact, whether that means predictive modeling, NLP systems, LLM-enabled workflows, or applied
-              experimentation on large datasets.
+              Instead of a simple portfolio list, the website now presents your professional identity more clearly: your
+              specializations, your approach to solving data problems, and the business-facing value of your work.
             </p>
           </article>
         </div>
@@ -728,18 +656,7 @@
   </main>
 
   <footer>
-    <div class="footer-inner">
-      <div class="footer-copy">
-        <strong>Sourabh Baldwa</strong>
-        <span>Data Scientist focused on NLP, LLM systems, predictive modeling, and production-ready AI.</span>
-      </div>
-      <div class="footer-links">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="mailto:sourabhbaldwa11014@gmail.com">Email</a>
-        <a href="https://linkedin.com/in/sourabh-baldwa" target="_blank" rel="noreferrer">LinkedIn</a>
-      </div>
-    </div>
+    © 2026 Sourabh Baldwa. Crafted to reflect a stronger data science and GenAI profile.
   </footer>
 </body>
 </html>
