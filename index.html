@@ -2,110 +2,661 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sourabh Baldwa | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Portfolio of Sourabh Baldwa, a data scientist focused on NLP, LLM systems, predictive modeling, and production-grade AI solutions."
+  />
+  <title>Sourabh Baldwa | Data Scientist & GenAI Builder</title>
   <style>
     :root {
-      --primary: #4f46e5;
-      --bg-light: #f2f4f8;
-      --card-bg: #ffffff;
-      --text-dark: #333;
-      --text-light: #fff;
+      --bg: #0b1120;
+      --bg-soft: #111827;
+      --panel: rgba(15, 23, 42, 0.78);
+      --panel-solid: #ffffff;
+      --primary: #6366f1;
+      --primary-soft: rgba(99, 102, 241, 0.14);
+      --secondary: #22c55e;
+      --text-main: #e5e7eb;
+      --text-muted: #94a3b8;
+      --text-dark: #0f172a;
+      --border: rgba(148, 163, 184, 0.18);
+      --shadow: 0 24px 80px rgba(15, 23, 42, 0.24);
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --radius-sm: 999px;
+      --max-width: 1120px;
     }
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: Arial, sans-serif; color: var(--text-dark); background: var(--bg-light); }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(99, 102, 241, 0.32), transparent 32%),
+        radial-gradient(circle at top right, rgba(34, 197, 94, 0.18), transparent 22%),
+        linear-gradient(180deg, #020617 0%, #0f172a 46%, #e2e8f0 46%, #f8fafc 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(calc(100% - 2rem), var(--max-width));
+      margin: 0 auto;
+    }
+
     header {
-      position: fixed;
-      top:0; left:0; right:0;
-      background: var(--primary);
-      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(18px);
+      background: rgba(2, 6, 23, 0.74);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+    }
+
+    .nav-shell {
+      width: min(calc(100% - 2rem), var(--max-width));
+      margin: 0 auto;
+      padding: 1rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand strong {
+      font-size: 1.05rem;
+      letter-spacing: 0.02em;
+    }
+
+    .brand span {
+      color: var(--text-muted);
+      font-size: 0.86rem;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      color: #fff;
+    }
+
+    .hero {
+      padding: 5rem 0 4rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.95fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 0.9rem;
+      border-radius: var(--radius-sm);
+      background: var(--primary-soft);
+      color: #c7d2fe;
+      font-size: 0.92rem;
+      margin-bottom: 1.25rem;
+      border: 1px solid rgba(129, 140, 248, 0.18);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 5vw, 4.75rem);
+      line-height: 1.05;
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.04em;
+    }
+
+    .hero h1 .accent {
+      color: #a5b4fc;
+    }
+
+    .hero p {
+      max-width: 680px;
+      color: #cbd5e1;
+      font-size: 1.06rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .btn,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9rem 1.3rem;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      color: #fff;
+      box-shadow: 0 16px 40px rgba(99, 102, 241, 0.35);
+    }
+
+    .btn-secondary {
+      background: rgba(15, 23, 42, 0.45);
+      color: #e2e8f0;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+    }
+
+    .btn:hover,
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+    }
+
+    .hero-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+    }
+
+    .pill {
+      padding: 0.65rem 1rem;
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      color: #dbeafe;
+      font-size: 0.95rem;
+    }
+
+    .profile-card,
+    .section-card,
+    .project-card,
+    .contact-card {
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+
+    .profile-card {
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.86), rgba(15, 23, 42, 0.65));
+      padding: 1.75rem;
+      border: 1px solid var(--border);
+    }
+
+    .profile-card h2 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1.4rem 0;
+    }
+
+    .stat {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(148, 163, 184, 0.14);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.6rem;
+      color: #fff;
+      margin-bottom: 0.2rem;
+    }
+
+    .stat span,
+    .profile-card li,
+    .section-subtitle,
+    .muted {
+      color: var(--text-muted);
+    }
+
+    .profile-card ul {
+      list-style: none;
+      display: grid;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .profile-card li::before {
+      content: "✦";
+      color: #818cf8;
+      margin-right: 0.6rem;
+    }
+
+    main {
+      padding-bottom: 5rem;
+    }
+
+    .content-shell {
+      color: var(--text-dark);
+    }
+
+    .section-card {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 2rem;
+      margin-bottom: 1.8rem;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+    }
+
+    .section-header {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      z-index:1000;
+      align-items: end;
+      gap: 1rem;
+      margin-bottom: 1.6rem;
     }
-    header h1 { color: var(--text-light); font-size:1.5rem; }
-    nav a {
-      color: var(--text-light);
-      margin-left: 1.5rem;
-      text-decoration: none;
-      font-weight:600;
+
+    .section-header h2 {
+      font-size: 1.7rem;
+      color: #0f172a;
+      margin-bottom: 0.35rem;
     }
-    main { margin-top: 5rem; }
-    section { padding: 4rem 2rem; }
-    .bg-white { background: var(--card-bg); border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.05); margin:2rem auto; max-width: 900px; }
-    h2 { color: var(--primary); margin-bottom: 1rem; }
-    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; }
-    .project-card { background: var(--card-bg); padding: 1.5rem; border-radius:6px; box-shadow:0 1px 5px rgba(0,0,0,0.1); }
-    .project-card h3 { margin-bottom:0.5rem; }
-    .project-card p { margin-bottom:1rem; }
-    .btn { display:inline-block; padding:0.5rem 1rem; background:var(--primary); color:var(--text-light); text-decoration:none; border-radius:4px; }
-    .skills { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; }
+
+    .about-grid,
+    .focus-grid,
+    .projects-grid,
+    .contact-grid {
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    .about-grid {
+      grid-template-columns: 1.2fr 0.8fr;
+    }
+
+    .focus-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .focus-card,
+    .project-card,
+    .contact-card {
+      background: #fff;
+      padding: 1.35rem;
+      border: 1px solid #e2e8f0;
+    }
+
+    .focus-card h3,
+    .project-card h3,
+    .contact-card h3 {
+      margin-bottom: 0.7rem;
+      color: #0f172a;
+    }
+
+    .focus-card p,
+    .project-card p,
+    .about-grid p,
+    .contact-card p {
+      color: #475569;
+    }
+
+    .skills-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 1rem;
+    }
+
     .skill-tag {
-      background: var(--primary);
-      color: white;
-      padding: 0.4rem 0.8rem;
-      border-radius: 20px;
-      font-size: 0.9rem;
+      background: #eef2ff;
+      color: #4338ca;
+      padding: 0.65rem 0.95rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1px solid #c7d2fe;
     }
-    footer { text-align:center; padding:2rem; font-size:0.9rem; color:#666; }
-    a { color: var(--primary); }
+
+    .projects-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin: 1rem 0 1.1rem;
+    }
+
+    .chip {
+      background: #f8fafc;
+      color: #334155;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-sm);
+      padding: 0.45rem 0.75rem;
+      font-size: 0.84rem;
+      font-weight: 600;
+    }
+
+    .project-link {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .contact-grid {
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+
+    .contact-list {
+      list-style: none;
+      display: grid;
+      gap: 0.95rem;
+      margin-top: 1rem;
+    }
+
+    .contact-list a {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      color: #64748b;
+      padding: 2rem 1rem 3rem;
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid,
+      .about-grid,
+      .contact-grid,
+      .projects-grid,
+      .focus-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-header {
+        align-items: start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .nav-shell {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        justify-content: flex-start;
+      }
+
+      .hero {
+        padding-top: 3.5rem;
+      }
+
+      .section-card,
+      .profile-card {
+        padding: 1.35rem;
+      }
+
+      .stat-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
-
-<header>
-  <h1>Sourabh Baldwa</h1>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<main>
-  <section id="about" class="bg-white">
-    <h2>About Me</h2>
-    <p>An Experienced Data Scientist familiar with gathering, cleaning and organising large datasets for use by technical and non-technical personnel. Highly organised, motivated and diligent with significant background in Natural Language Processing (NLP), LLM, Data Mining, Big Data Analytics, Predictive Modelling and other ML projects.</p>
-  </section>
-
-  <section id="skills" class="bg-white">
-    <h2>Skills</h2>
-    <div class="skills">
-      <span class="skill-tag">Python</span>
-      <span class="skill-tag">Big Data</span>
-      <span class="skill-tag">Generative AI</span>
-      <span class="skill-tag">AI Agents</span>
+  <header>
+    <div class="nav-shell">
+      <a class="brand" href="#top" aria-label="Sourabh Baldwa home">
+        <strong>Sourabh Baldwa</strong>
+        <span>Data Scientist · NLP · LLM Systems</span>
+      </a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <section id="projects" class="bg-white">
-    <h2>Projects</h2>
-    <div class="projects">
-      <div class="project-card">
-        <h3>Click Prediction Model</h3>
-        <p>High-performance model ranking offers by click probability using tree ensembles + deep learning on 1M+ rows across 367 features.</p>
-        <a class="btn" href="#">View →</a>
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Building practical AI systems that create business value</span>
+          <h1>
+            Turning data into <span class="accent">intelligent products</span>
+            and scalable decisions.
+          </h1>
+          <p>
+            I am a data scientist with experience across predictive modeling, natural language processing,
+            large language model applications, and big data analytics. My work blends research-minded experimentation
+            with production-focused thinking to deliver solutions that are accurate, measurable, and usable by both
+            technical and non-technical stakeholders.
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="#projects">Explore Projects</a>
+            <a class="btn-secondary" href="mailto:sourabhbaldwa11014@gmail.com">Let’s Collaborate</a>
+          </div>
+          <div class="hero-highlights">
+            <span class="pill">Predictive Modeling</span>
+            <span class="pill">NLP & LLM Applications</span>
+            <span class="pill">Big Data Analytics</span>
+            <span class="pill">AI Agent Workflows</span>
+          </div>
+        </div>
+
+        <aside class="profile-card" aria-label="Profile highlights">
+          <h2>Profile Snapshot</h2>
+          <p class="muted">
+            Focused on solving high-impact business problems with machine learning, retrieval-augmented generation,
+            and data-driven experimentation.
+          </p>
+          <div class="stat-grid">
+            <div class="stat">
+              <strong>1M+</strong>
+              <span>Rows modeled in large-scale click prediction workflows</span>
+            </div>
+            <div class="stat">
+              <strong>367</strong>
+              <span>Features engineered for complex ranking and prediction tasks</span>
+            </div>
+            <div class="stat">
+              <strong>GenAI</strong>
+              <span>Enterprise-oriented RAG and hallucination mitigation design</span>
+            </div>
+            <div class="stat">
+              <strong>End-to-End</strong>
+              <span>From data cleaning and analysis to model delivery</span>
+            </div>
+          </div>
+          <ul>
+            <li>Comfortable translating ambiguity into structured ML roadmaps.</li>
+            <li>Experienced working across technical depth and stakeholder communication.</li>
+            <li>Strong interest in trustworthy, performant, production-grade AI systems.</li>
+          </ul>
+        </aside>
       </div>
-      <div class="project-card">
-        <h3>Enterprise RAG System</h3>
-        <p>Low-latency RAG pipeline combining hybrid retrieval, multi-stage ranking, and hallucination mitigation for large-scale GenAI apps.</p>
-        <a class="btn" href="#">View →</a>
-      </div>
+    </section>
+
+    <div class="container content-shell">
+      <section id="about" class="section-card">
+        <div class="section-header">
+          <div>
+            <h2>About Me</h2>
+            <p class="section-subtitle">A profile-driven overview of how I approach data science work.</p>
+          </div>
+        </div>
+        <div class="about-grid">
+          <div>
+            <p>
+              I bring an analytical, structured approach to data problems, with hands-on experience in gathering,
+              cleaning, organizing, and modeling large datasets. My background spans machine learning, NLP, LLM-based
+              applications, predictive modeling, and data mining, which allows me to work across both classical ML and
+              modern generative AI use cases.
+            </p>
+            <br />
+            <p>
+              Beyond modeling, I care about clarity: making insights accessible, aligning with product and business
+              goals, and building systems that are reliable outside a notebook. That means balancing experimentation,
+              interpretability, speed, and deployment practicality in every solution.
+            </p>
+          </div>
+          <div>
+            <h3>Core Skills</h3>
+            <div class="skills-wrap">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Natural Language Processing</span>
+              <span class="skill-tag">Large Language Models</span>
+              <span class="skill-tag">Generative AI</span>
+              <span class="skill-tag">Predictive Modeling</span>
+              <span class="skill-tag">Data Mining</span>
+              <span class="skill-tag">Big Data Analytics</span>
+              <span class="skill-tag">AI Agents</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="expertise" class="section-card">
+        <div class="section-header">
+          <div>
+            <h2>Where I Add Value</h2>
+            <p class="section-subtitle">Capabilities that reflect your profile more clearly than a basic skills list.</p>
+          </div>
+        </div>
+        <div class="focus-grid">
+          <article class="focus-card">
+            <h3>Applied Machine Learning</h3>
+            <p>
+              Building predictive systems that move from feature engineering and experimentation to measurable business
+              outcomes.
+            </p>
+          </article>
+          <article class="focus-card">
+            <h3>NLP & LLM Solutions</h3>
+            <p>
+              Designing language-driven applications including retrieval, ranking, and grounded generation workflows.
+            </p>
+          </article>
+          <article class="focus-card">
+            <h3>Production-Minded AI</h3>
+            <p>
+              Optimizing for latency, quality, maintainability, and stakeholder trust when taking AI systems closer to
+              real-world use.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects" class="section-card">
+        <div class="section-header">
+          <div>
+            <h2>Featured Projects</h2>
+            <p class="section-subtitle">Selected work that highlights both modeling depth and GenAI system design.</p>
+          </div>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card">
+            <h3>Click Prediction Model</h3>
+            <p>
+              Developed a high-performance ranking approach to prioritize offers by click probability, combining tree
+              ensembles and deep learning over a large, feature-rich dataset.
+            </p>
+            <div class="project-meta">
+              <span class="chip">1M+ rows</span>
+              <span class="chip">367 features</span>
+              <span class="chip">Ranking & Prediction</span>
+            </div>
+            <a class="project-link" href="#contact">Ask me about this project →</a>
+          </article>
+
+          <article class="project-card">
+            <h3>Enterprise RAG System</h3>
+            <p>
+              Designed a low-latency retrieval-augmented generation pipeline using hybrid retrieval, multi-stage ranking,
+              and hallucination mitigation techniques for enterprise-scale GenAI applications.
+            </p>
+            <div class="project-meta">
+              <span class="chip">Hybrid Retrieval</span>
+              <span class="chip">Multi-Stage Ranking</span>
+              <span class="chip">Low Latency</span>
+            </div>
+            <a class="project-link" href="#contact">Discuss the architecture →</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="section-card">
+        <div class="section-header">
+          <div>
+            <h2>Let’s Connect</h2>
+            <p class="section-subtitle">Open to conversations around data science, GenAI, and intelligent product development.</p>
+          </div>
+        </div>
+        <div class="contact-grid">
+          <article class="contact-card">
+            <h3>Best way to reach me</h3>
+            <p>
+              If you are hiring, collaborating, or exploring ideas in machine learning and generative AI, feel free to
+              reach out directly.
+            </p>
+            <ul class="contact-list">
+              <li>📧 <a href="mailto:sourabhbaldwa11014@gmail.com">sourabhbaldwa11014@gmail.com</a></li>
+              <li>💼 <a href="https://linkedin.com/in/sourabh-baldwa" target="_blank" rel="noreferrer">LinkedIn</a></li>
+              <li>💻 <a href="https://github.com/sourabh-baldwa" target="_blank" rel="noreferrer">GitHub</a></li>
+            </ul>
+          </article>
+          <article class="contact-card">
+            <h3>What this site now emphasizes</h3>
+            <p>
+              Instead of a simple portfolio list, the website now presents your professional identity more clearly: your
+              specializations, your approach to solving data problems, and the business-facing value of your work.
+            </p>
+          </article>
+        </div>
+      </section>
     </div>
-  </section>
+  </main>
 
-  <section id="contact" class="bg-white">
-    <h2>Contact</h2>
-    <p>📧 <a href="mailto:sourabhbaldwa11014@gmail.com">sourabhbaldwa11014@gmail.com</a></p>
-    <p>🔗 <a href="https://linkedin.com/in/sourabh-baldwa" target="_blank">LinkedIn</a> | <a href="https://github.com/sourabh-baldwa" target="_blank">GitHub</a></p>
-  </section>
-</main>
-
-<footer>
-  © 2025 Sourabh Baldwa. All rights reserved.
-</footer>
-
+  <footer>
+    © 2026 Sourabh Baldwa. Crafted to reflect a stronger data science and GenAI profile.
+  </footer>
 </body>
 </html>
