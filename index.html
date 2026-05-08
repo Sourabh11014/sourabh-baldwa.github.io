@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
-    content="Portfolio of Sourabh Baldwa, a data scientist focused on NLP, LLM systems, predictive modeling, and production-grade AI solutions."
+    content="Portfolio of Sourabh Baldwa, Lead Data Scientist focused on NLP, LLM systems, predictive modeling, healthcare AI agents, and production-grade AI solutions."
   />
-  <title>Sourabh Baldwa | Data Scientist & GenAI Builder</title>
+  <title>Sourabh Baldwa | Lead Data Scientist & GenAI Builder</title>
   <style>
     :root {
       --bg: #0b1120;
@@ -309,7 +309,7 @@
     }
 
     .focus-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
     .focus-card,
@@ -437,6 +437,35 @@
       padding-left: 1.1rem;
     }
 
+    .credential-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .credential-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-lg);
+      padding: 1.35rem;
+    }
+
+    .credential-card h3 {
+      color: #0f172a;
+      margin-bottom: 0.65rem;
+    }
+
+    .credential-card p,
+    .credential-card li {
+      color: #475569;
+    }
+
+    .credential-card ul {
+      display: grid;
+      gap: 0.55rem;
+      margin-left: 1.1rem;
+    }
+
     .project-points li::before {
       content: "•";
       color: var(--primary);
@@ -514,13 +543,14 @@
     <div class="nav-shell">
       <a class="brand" href="#top" aria-label="Sourabh Baldwa home">
         <strong>Sourabh Baldwa</strong>
-        <span>Data Scientist · NLP · LLM Systems</span>
+        <span>Lead Data Scientist · NLP · LLM Systems</span>
       </a>
       <nav>
         <a href="#about">About</a>
         <a href="#expertise">Expertise</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
+        <a href="#credentials">Credentials</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -536,8 +566,8 @@
             that scales decisions.
           </h1>
           <p>
-            Data scientist with 5+ years of experience delivering machine learning and GenAI systems in ad-tech and
-            enterprise workflows. I specialize in LLM systems, ads optimization, and large-scale ML pipelines that
+            Lead Data Scientist with 8+ years of experience delivering machine learning and GenAI systems in ad-tech,
+            enterprise, finance, and healthcare workflows. I specialize in LLM systems, ads optimization, and large-scale ML pipelines that
             improve key metrics, reduce latency, and ship reliably in production.
           </p>
           <div class="hero-actions">
@@ -545,6 +575,7 @@
             <a class="btn-secondary" href="mailto:sourabhbaldwa11014@gmail.com">Let’s Collaborate</a>
           </div>
           <div class="hero-highlights">
+            <span class="pill">8+ Years ML Experience</span>
             <span class="pill">1B+ Rows Modeled</span>
             <span class="pill">40M+ Users Impacted</span>
             <span class="pill">12% Campaign Lift</span>
@@ -556,8 +587,9 @@
         <aside class="profile-card" aria-label="Profile highlights">
           <h2>Profile Snapshot</h2>
           <p class="muted">
-            Consultant at Turing with prior senior data science experience at Aarki and Glance, combining classical
-            machine learning, large-scale ads optimization, RAG systems, and real-time AI agents.
+            Lead Data Scientist at Hilabs with prior consulting and senior data science experience at Turing, Aarki,
+            Glance, American Express, and J.P. Morgan Chase, combining classical machine learning, large-scale ads
+            optimization, RAG systems, and real-time AI agents.
           </p>
           <div class="stat-grid">
             <div class="stat">
@@ -614,6 +646,17 @@
             <h3>Core Skills</h3>
             <div class="skills-wrap">
               <span class="skill-tag">Python</span>
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">PySpark</span>
+              <span class="skill-tag">GCP & AWS</span>
+              <span class="skill-tag">PyTorch & TensorFlow</span>
+              <span class="skill-tag">A/B Testing</span>
+              <span class="skill-tag">MLOps & AIOps</span>
+              <span class="skill-tag">LangChain & LangGraph</span>
+              <span class="skill-tag">Prompt Engineering</span>
+              <span class="skill-tag">Statistical Analysis</span>
+              <span class="skill-tag">Project Management</span>
+              <span class="skill-tag">Computer Vision</span>
               <span class="skill-tag">Natural Language Processing</span>
               <span class="skill-tag">Large Language Models</span>
               <span class="skill-tag">Generative AI</span>
@@ -651,6 +694,13 @@
             </p>
           </article>
           <article class="focus-card">
+            <h3>Big Data & Experimentation</h3>
+            <p>
+              Applying PySpark, SQL, cloud platforms, and A/B testing discipline to build, validate, and operate ML
+              systems over high-volume datasets.
+            </p>
+          </article>
+          <article class="focus-card">
             <h3>Production-Minded AI</h3>
             <p>
               Optimizing for latency, quality, maintainability, and stakeholder trust when taking AI systems closer to
@@ -664,16 +714,26 @@
         <div class="section-header">
           <div>
             <h2>Experience Highlights</h2>
+            <p class="section-subtitle">8+ years across healthcare AI, ad-tech, fintech, document intelligence, and enterprise automation.</p>
           </div>
         </div>
         <div class="experience-grid">
           <article class="experience-card">
-            <h3>Turing</h3>
-            <span class="role-meta">Consultant · Aug 2024 – Current</span>
+            <h3>Hilabs Inc., Bangalore</h3>
+            <span class="role-meta">Lead Data Scientist · Jan 2026 – Current</span>
             <ul class="experience-list">
-              <li>Led end-to-end execution of data science projects covering ML model development, preprocessing, trend analysis, and stakeholder communication.</li>
-              <li>Built and deployed RAG pipelines with LangGraph and vector databases for context-aware assistants in document-heavy workflows.</li>
+              <li>Lead ML initiatives and guide a data science team delivering production-grade models across multiple business use cases.</li>
+              <li>Built and deployed RAG pipelines with LangGraph and vector databases for context-aware assistants in document-heavy healthcare workflows.</li>
               <li>Developed real-time healthcare voice agents using OpenAI and Gemini Realtime APIs with LiveKit, including function calling, reasoning, VAD, and turn-taking.</li>
+            </ul>
+          </article>
+
+          <article class="experience-card">
+            <h3>Turing.com</h3>
+            <span class="role-meta">Freelance Consultant · Aug 2024 – Nov 2025</span>
+            <ul class="experience-list">
+              <li>Led end-to-end data science engagements spanning ML model development, preprocessing, trend analysis, and stakeholder communication.</li>
+              <li>Translated business questions into scoped analytical roadmaps, modeling plans, and delivery milestones for decision-support use cases.</li>
             </ul>
           </article>
 
@@ -694,6 +754,26 @@
               <li>Built data science models for the Ad Monetization team and created a SpaCy-based compliance algorithm aligned with OEM and Glance guidelines.</li>
               <li>Developed a Gradient Boosted Trees model across more than 40 million users, increasing LTV metrics by 20%.</li>
               <li>Implemented a Prophet-based time series model that reduced impression over-delivery from 70% to 10%.</li>
+            </ul>
+          </article>
+
+          <article class="experience-card">
+            <h3>American Express, Bangalore</h3>
+            <span class="role-meta">Research Scientist · Nov 2019 – Aug 2021</span>
+            <ul class="experience-list">
+              <li>Worked with the Big Data and Advanced Analytics team to improve customer service experiences using deep learning and machine learning.</li>
+              <li>Designed a smart dispute closure bot leveraging OCR and NLP to evaluate merchant support documents such as receipts and invoices.</li>
+              <li>Handled thousands of document variations and enabled automated resolution for 50% of incoming disputes.</li>
+            </ul>
+          </article>
+
+          <article class="experience-card">
+            <h3>J.P. Morgan Chase, Bangalore</h3>
+            <span class="role-meta">Software Engineer · Jun 2017 – Oct 2019</span>
+            <ul class="experience-list">
+              <li>Developed bots to extract information from scanned PDFs into structured tabular formats for operations workflows.</li>
+              <li>Used Support Vector Machine algorithms for document categorization and integrated outputs with RPA workflows.</li>
+              <li>Improved operational efficiency by saving approximately five full-time-employee equivalents.</li>
             </ul>
           </article>
         </div>
@@ -769,6 +849,35 @@
         </div>
       </section>
 
+      <section id="credentials" class="section-card">
+        <div class="section-header">
+          <div>
+            <h2>Education & Certifications</h2>
+            <p class="section-subtitle">Formal training and continuous learning behind the applied ML work.</p>
+          </div>
+        </div>
+        <div class="credential-grid">
+          <article class="credential-card">
+            <h3>Education</h3>
+            <p><strong>B.E. (Hons.) in Mechanical Engineering</strong></p>
+            <p>Birla Institute of Technology and Science (BITS) Pilani, Rajasthan · 2017</p>
+          </article>
+          <article class="credential-card">
+            <h3>Certifications</h3>
+            <ul>
+              <li>NLP Specialization · March 2021</li>
+              <li>Deep Learning Specialization · March 2019</li>
+              <li>AI Agents by Hugging Face · February 2025</li>
+            </ul>
+          </article>
+          <article class="credential-card">
+            <h3>Location & Languages</h3>
+            <p>Preferred location: Bangalore, Karnataka.</p>
+            <p>Languages: English and Hindi.</p>
+          </article>
+        </div>
+      </section>
+
       <section id="contact" class="section-card">
         <div class="section-header">
           <div>
@@ -784,7 +893,9 @@
               reach out directly.
             </p>
             <ul class="contact-list">
+              <li>📞 <a href="tel:+919887840460">+91 9887840460</a></li>
               <li>📧 <a href="mailto:sourabhbaldwa11014@gmail.com">sourabhbaldwa11014@gmail.com</a></li>
+              <li>📍 Bangalore, Karnataka · Open to Bangalore-based roles</li>
               <li>💼 <a href="https://linkedin.com/in/sourabh-baldwa" target="_blank" rel="noreferrer">LinkedIn</a></li>
               <li>💻 <a href="https://github.com/sourabh-baldwa" target="_blank" rel="noreferrer">GitHub</a></li>
             </ul>
